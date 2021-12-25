@@ -1,6 +1,8 @@
 import NewMeetupForm from "../components/meetups/NewMeetupForm";
+import { useNavigate } from 'react-router-dom';
 
 function NewMeetupPage() {
+    const navigate = useNavigate();
     function addNewMeetupHandler(meetup) {
         fetch(
             'https://dev001.na-dev-engine.altogic.com/e:61c6266a49b7b99f76f2fb95/meetup',
@@ -11,7 +13,9 @@ function NewMeetupPage() {
                     'Content-Type': 'application/json'
                 }
             }
-        );
+        ).then(() => {
+            navigate('/');
+        });
     }
 
     return (
