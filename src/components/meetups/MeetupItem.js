@@ -4,16 +4,16 @@ import { useContext } from 'react';
 import FavoritesContext from '../../store/favorites-context';
 
 function MeetupItem(props) {
-    const favoriteContext = useContext(FavoritesContext);
+    const favoriteCntxt = useContext(FavoritesContext);
 
-    const itemIsFavorite = favoriteContext.itemIsFavorite(props.id);
+    const itemIsFavorite = favoriteCntxt.itemIsFavorite(props._id);
 
     function toggleFavoriteStatusHandler() {
         if (itemIsFavorite) {
-            favoriteContext.removeFavorite(props.id);
+            favoriteCntxt.removeFavorite(props._id);
         } else {
-            favoriteContext.addFavorite({
-                id: props.id,
+            favoriteCntxt.addFavorite({
+                _id: props._id,
                 title: props.title,
                 description: props.description,
                 image: props.image,

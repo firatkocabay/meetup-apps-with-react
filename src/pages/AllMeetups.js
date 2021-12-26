@@ -20,14 +20,18 @@ function AllMeetupsPage() {
 
 
   if (isLoading) {
-    return <section>
-      <h3>Loading...</h3>
-    </section>
+    return (
+      <section>
+        <h3>Loading...</h3>
+      </section>
+    );
   }
-    return <section>
+    return (
+      <section>
         <h1>All Meetups</h1>
         <MeetupList meetups={meetupData} />
-        </section>;
+      </section>
+    );
 }
 
 export default AllMeetupsPage;
